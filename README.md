@@ -3,15 +3,16 @@ Carlos Franco and Lucia Puppo
 <h1> Tasks </h1>
 
 <h3> 
- 0) Write a function that produces output according to a format.
+0) Write a function that produces output according to a format.
  You need to handle the following conversion specifiers:
 c
 s
 %
+ break 
 1) Handle the following conversion specifiers:
 
 d
 i
-
+break 
 2) Create a man page for your function.
 </h3>
