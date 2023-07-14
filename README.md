@@ -1,6 +1,7 @@
 # holbertonschool-printf
 Carlos Franco and Lucia Puppo 
-<h> Tasks <h1>
+<h1> Tasks <h1>
+
 0) Write a function that produces output according to a format.
  You need to handle the following conversion specifiers:
 c
