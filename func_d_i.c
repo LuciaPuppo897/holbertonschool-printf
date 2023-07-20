@@ -5,13 +5,13 @@
 
 /**
  *print_d - prints an integer in base 10
- *@list: list of arguments from va_list
+ *@args: list of arguments from va_list
  *return: nothing
  */
 
-void print_d(va_list list)
+void print_d(va_list args)
 {
-	int num = (va_arg(list, int));
+	int num = (va_arg(args, int));
 	int p = 0;
 	int digit[20];
 	char sign;

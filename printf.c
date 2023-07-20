@@ -7,56 +7,50 @@
  *@format: format
  *Return: alway success
  */
-
 int _printf(const char *format, ...)
 {
-	va_list args;
+	int count = 0;
 
+	va_list args;
 	va_start(args, format);
 
-	int i = 0; // To keep track of the number of characters printed
-
-	for (; *format != '\0'; format++)
+	while (*format)
 	{
-		if (*format != '%')
+		if (*format == '%')
 		{
-			_putchar(*format); // prints string
-			i++;
-			continue; // checks the rest of the code
-		}
-
-		format++; // Move to the next character after '%'
-
+			format++;
 		switch (*format)
 		{
 			case 'c':
-			{
-				print_c(args); // calls print_c function
-				break; // stops after implementation
-			}
+				print_c(args);
+				count++;
+				break;
 
 			case 's':
-			{
-				print_s(args); //calls print_s function
+				print_s(args);
+				count++;
 				break;
-			}
 
 			case '%':
-			{
-				print_percent();
+				_putchar('%');
+				count++;
 				break;
-			}
+
+			case 'd':
+			case 'i':
+				print_d(args);
+				count++;
+				break;
 
 			default:
-				_putchar('%');
 				_putchar(*format);
-				i += 2;
+				count += 2;
 				break;
+			}
 		}
-	}
-
-	va_end(args);
-
-	return (i);
+			_putchar(*format);
+		}
+		va_end(args);
+		return (count);
 }
 

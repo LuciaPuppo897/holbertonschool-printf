@@ -8,7 +8,7 @@
  */
 void print_s(va_list list)
 {
-	int i; // recorre//
+	int i;
 	char *str;
 
 	str = (va_arg(list, char *));
@@ -25,7 +25,7 @@ void print_s(va_list list)
  *Return: nothing
  */
 
-void print_c(va_list list) // no tiene porque recibir solo chars/
+void print_c(va_list list)
 {
 	char c;
 
