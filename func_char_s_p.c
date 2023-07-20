@@ -1,6 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
-
+#include "main.h"
 /**
  * print_s - print a string
  * @list: the string that printf recieve
