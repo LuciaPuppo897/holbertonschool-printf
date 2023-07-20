@@ -1,6 +1,8 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
+#include "main.h"
+
 /**
  *print_d - prints an integer in base 10
  *@list: list of arguments from va_list
@@ -9,40 +11,28 @@
 
 void print_d(va_list list)
 {
-	int num = va_arg(list, int);
-	char arr1[10000];   // crea un array con  10000 espacios
-	int n = 10;         // en base decimal
+	int num = (va_arg(list, int));
+	int p = 0;
+	int digit[20];
+	char sign;
 
-	itoa(num, arr1, n); // Convertir el número en una cadena de caracteres
-	if (arr1 != NULL)
+	if (num < 0)
 	{
-		for (size_t i = 0; i < strlen(arr1); i++)
-		{
-			putchar(arr1[i]);
-		}
+	num = -num;
+	sign = 1;
+	}
+	while (num != 0)
+	{
+	digit[p] = num % 10;
+	num /= 10;
+	p++;
+	}
+
+	if (sign == 1)
+	_putchar ('-');
+
+	while (p > 0)
+	{
+	_putchar ('0' + digit[--p]);
 	}
 }
-
-/**
- *print_i - prints an integer in base 10
- *@list: list of argument from va_list
- *return: nothing
- */
-
-void print_i(va_list list)
-{
-	int num = va_arg(list, int);
-	char arr1[10000];   // crea un array con  10000 espacios
-	int n = 10;         // en base decimal
-	itoa(num, arr1, n); // Convertir el número en una cadena de caracteres
-
-	if (arr1 != NULL)
-	{
-		for (size_t i = 0; i < strlen(arr1); i++)
-		{
-			putchar(arr1[i]);
-		}
-	}
-}
-// o directamente llamamos a print_d dos veces
-
