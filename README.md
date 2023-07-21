@@ -32,6 +32,74 @@ Used to format and display null-terminated strings.
 - [ ] %;
 Used to display the percent symbol % itself.
 
+## Library 
+
+printf is a C function belonging to the ANSI C standard library, for this function we used  
+- <stdio.h>
+- <stdarg.h>
+- <stdlib.h>
+  
+## Usage 
+
+The printf function is a commonly used function in programming languages like C, C++, and many others. It is used to display formatted output on the console or terminal. Here's a general syntax for using printf:
+
+```ruby
+#include <stdarg.h>
+#include <stdio.h>
+#include "main.h"
+
+/**
+ *_printf - print f function
+ *@format: format
+ *Return: alway success
+ */
+
+int main() 
+
+{
+    int _printf(const char *format, ...)
+    return 0;
+}
+```
+
+In this syntax:
+
+printf is the function name.
+"format string" is a string that specifies the format of the output. It can contain plain text and format specifiers, which start with a percent sign % followed by a conversion character. In this case the format specifiers are found in the *format. To access the data types, we used va_arg. For more information you can check man va_arg(3).  
+
+These are values that you want to include in the output, which can be variables, constants, or expressions.
+
+Here's an example to illustrate the usage of printf:
+
+```ruby
+#include <stdio.h>
+#include "main.h"
+
+int main() {
+    int num1 = 10;
+    str = "Hello World";
+    char letter = 'A';
+    
+    print_d("Integer: %d\n", num1);
+    print_s("str: %s\n", string);
+    print_c("Character: %c\n", letter);
+    
+    return 0;
+}
+```
+Output:
+
+```ruby
+Integer: 10
+String: "Hello World"
+Character: A
+```
+
+In this example, we use format specifiers like %d for integers, %s for strings arrays, and %c for characters. In this case we use the different format function simulate what printf will do. 
+
+Note that printf is a versatile function with many format specifiers and options. The specific usage may vary depending on the programming language you are using, so be sure to consult the documentation or language-specific resources for detailed information.
+
+
 ## File Descriptions
 * **putchar.c** :  contains the _putchar function , which writes a character to stdout.
 * **main.h** : contains all function prototypes used for _printf. 
