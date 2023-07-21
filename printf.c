@@ -1,7 +1,6 @@
 #include <stdarg.h>
-#include <stdio.h>
 #include "main.h"
-
+#include <stdio.h>
 /**
  *_printf - print f function
  *@format: format
@@ -9,48 +8,41 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0;
+va_list args;
+	int i = 0;
+	int	count = 0;
+	int count2;
 
-	va_list args;
 	va_start(args, format);
-
-	while (*format)
+	if (format == 0 || (format[0] == '%' && format[0 + 1] == ' '))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	while (format[i])
 	{
-		if (*format == '%')
+		count2 = 0;
+		if (format[i] == '%')
 		{
-			format++;
-		switch (*format)
-		{
-			case 'c':
-				print_c(args);
-				count++;
-				break;
-
-			case 's':
-				print_s(args);
-				count++;
-				break;
-
-			case '%':
-				_putchar('%');
-				count++;
-				break;
-
-			case 'd':
-			case 'i':
-				print_d(args);
-				count++;
-				break;
-
-			default:
-				_putchar(*format);
-				count += 2;
+			if (!format[i + 1] || (format[i + 1] == ' ' && !format[i + 2]))
+			{
+				count = -1;
 				break;
 			}
+			count2 += call_functions(format[i + 1], args);
+			if (count2 == 0)
+				count += _putchar(format[i + 1]);
+			if (count2 == -1)
+				count = -1;
+			i++;
 		}
-			_putchar(*format);
+		else
+		{
+		(count == -1) ? (_putchar(format[i])) : (count += _putchar(format[i]));
 		}
-		va_end(args);
-		return (count);
+	i++;
+	if (count != -1)
+	count += count2;
+	}
+	va_end(args);
+	return (count);
 }
-

@@ -3,42 +3,52 @@
 #include "main.h"
 /**
  * print_s - print a string
- * @list: the string that printf recieve
- * Return: nothing
+ * @args: the string that printf recieve
+ * Return: amount of printed chars
  */
-void print_s(va_list list)
+int print_s(va_list args)
 {
 	int i;
 	char *str;
+	int count = 0;
 
-	str = (va_arg(list, char *));
-
+	str = (va_arg(args, char *));
+	if (!str)
+		str = "(null)";
+	if (str[0] == '\0')
+		return (-1);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		putchar(str[i]);
+	count += _putchar(str[i]);
 	}
+	return (count);
 }
 
 /**
- * print_c - prints a char
- *@list: the arguments that printf recieve
- *Return: nothing
+ *print_c - prints a char
+ *@args: the arguments that printf recieve
+ *Return: amount of printed chars
  */
 
-void print_c(va_list list)
+int print_c(va_list args)
 {
 	char c;
 
-	c = (va_arg(list, int));
+	c = (char)va_arg(args, int);
 	putchar(c);
+	return (1);
 }
 /**
- * print_percent - prints a % symbol
+ *print_p - prints a % symbol
+ *@args: arguments
  *Return: nothing
- *
  */
 
-void print_percent(void)
+int print_p(va_list args)
 {
-	putchar('%');
+	(void)args;
+
+	_putchar('%');
+
+	return (1);
 }

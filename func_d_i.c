@@ -9,7 +9,7 @@
  *return: nothing
  */
 
-void print_d(va_list args)
+int print_d(va_list args)
 {
 	int num = (va_arg(args, int));
 	int p = 0;
@@ -18,14 +18,14 @@ void print_d(va_list args)
 
 	if (num < 0)
 	{
-	num = -num;
-	sign = 1;
+		num = -num;
+		sign = 1;
 	}
 	while (num != 0)
 	{
-	digit[p] = num % 10;
-	num /= 10;
-	p++;
+		digit[p] = num % 10;
+		num /= 10;
+		p++;
 	}
 
 	if (sign == 1)
@@ -33,6 +33,7 @@ void print_d(va_list args)
 
 	while (p > 0)
 	{
-	_putchar ('0' + digit[--p]);
+		_putchar ('0' + digit[--p]);
 	}
+	return (1);
 }
