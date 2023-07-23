@@ -68,13 +68,12 @@ int print_d(va_list args)
 
 	if (num < 0)
 	{
-		_putchar('-');
-		count++;
+		count += _putchar('-');
 		num = -num;
 	}
 	if (num < 10)	
-	count += (_putchar(num + '0'));
-  return (count);
+	return (count += (_putchar(num + '0')));
+  
 	digits_ = num;
 
 	while (digits_ > 9) 
