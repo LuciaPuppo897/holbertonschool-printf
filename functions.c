@@ -77,7 +77,7 @@ int print_d(va_list args)
   return (count);
 	digits_ = num;
 
-	while (digits_ > 9) // encuentra el divisor mas grande 
+	while (digits_ > 9) 
 	{		
 		div *= 10;  
 		digits_ /= 10;
