@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 /**
   * struct printf_format - a structure
@@ -12,17 +13,16 @@
   */
 typedef struct form
 {
-    char form;
-    int (*f)(va_list);
+	char *form;
+	int (*f)(va_list);
 } form_t;
 
 int _putchar(char c);
 int print_s(va_list args);
 int print_c(va_list args);
 int print_d(va_list args);
-int print_i(va_list args);
 int print_p(va_list args);
 int _printf(const char *format, ...);
-int call_functions (char format, va_list args);
+int call_functions(const char *format, form_t specifiers[], va_list args);
 #endif
 
