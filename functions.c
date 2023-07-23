@@ -61,39 +61,32 @@ return (1);
  */
 int print_d(va_list args)
 {
-	long int num = va_arg(args, long int);
-	char digit[20];
-	int p = 0;
+	long int num = va_arg(args, int);
+	long int digits_ = 0;
+	int div = 1;
 	int count = 0;
 
-	if (num == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
 	if (num < 0)
 	{
 		_putchar('-');
 		count++;
-		if (num == INT_MIN)
-		{
-			digit[p++] = '0' + (num % 10) * -1;
-			num = -(num / 10);
-		}
-		else
-		{
-			num = -num;
-		}
+		num = -num;
 	}
-	do {
-		digit[p++] = '0' + (num % 10);
-		num /= 10;
-	} while (num > 0);
+	if (num < 10)	
+	count += (_putchar(num + '0'));
+  return (count);
+	digits_ = num;
 
-		while (p > 0)
-		{
-			_putchar(digit[--p]);
-			count++;
-		}
-	return (count);
+	while (digits_ > 9) // encuentra el divisor mas grande 
+	{		
+		div *= 10;  
+		digits_ /= 10;
+	}
+
+  while (div >= 1)
+	{
+	count += _putchar('0' + ((num / div) % 10));
+	div /= 10;
+	}
+  return(count);
 }
