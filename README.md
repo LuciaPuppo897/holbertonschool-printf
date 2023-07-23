@@ -103,10 +103,10 @@ Note that printf is a versatile function with many format specifiers and options
 ## File Descriptions
 * **putchar.c** :  contains the _putchar function , which writes a character to stdout.
 * **main.h** : contains all function prototypes used for _printf. 
-* **call_functions** : contains an auxiliary function used to call all the specific functions to each format that printf handles.
+* **call_functions.c** : contains an auxiliary function used to call all the specific functions to each format that printf handles.
 * **_printf.c** :  contains the function _printf, which uses the prototype int _printf(const char *format, ...); and an auxiliary function to handle the formats.
 For more information check man_3_printf.
-* **functions** :  contains the functions print_d, print_c, print_s, print_p which are used to handle %d and %i, %c, %s and %% respectively.
+* **functions.c** :  contains the functions print_d, print_c, print_s, print_p which are used to handle %d and %i, %c, %s and %% respectively.
 
 
 
