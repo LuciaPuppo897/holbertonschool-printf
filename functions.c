@@ -81,7 +81,6 @@ int print_d(va_list args)
 		div *= 10;
 		digits_ /= 10;
 	}
-
 	while (div >= 1)
 	{
 	count += _putchar('0' + ((num / div) % 10));
