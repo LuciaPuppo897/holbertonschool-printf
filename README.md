@@ -110,7 +110,7 @@ For more information check man_3_printf.
 
 ## Flowchart
 
-![Flowchart] <img src="https://i.ibb.co/6r4bPxs/Captura-de-pantalla-2023-07-23-225206.png" alt="Flowchart" border="0">
+ <img src="https://i.ibb.co/6r4bPxs/Captura-de-pantalla-2023-07-23-225206.png" alt="Flowchart" border="0">
 
 ## Authors
 * **Carlos Franco** - [Github](https://github.com/cfranco87)
