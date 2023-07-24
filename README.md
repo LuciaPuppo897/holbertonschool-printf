@@ -108,7 +108,9 @@ Note that printf is a versatile function with many format specifiers and options
 For more information check man_3_printf.
 * **functions.c** :  contains the functions print_d, print_c, print_s, print_p which are used to handle %d and %i, %c, %s and %% respectively.
 
+## Flowchart
 
+![Flowchart](https://ibb.co/Jmz274k)
 
 ## Authors
 * **Carlos Franco** - [Github](https://github.com/cfranco87)
